@@ -1,6 +1,7 @@
 console.log("hello");
 //alias
 type personType = { name: string; age: number };
+
 const person: personType = {
   name: "Prnaesh",
   age: 5,
@@ -56,3 +57,44 @@ mul = (a: number, b: number) => {
 };
 
 mul(4, 4);
+
+//array type is strign and it will return string
+const getArray = (arr: string[]): string[] => {
+  return arr;
+};
+
+//generics types
+// It is dynamic array type wich return that type of array
+const getArrayOne = <T>(arr: T[]): T[] => {
+  return arr;
+};
+
+const printString = getArrayOne<string>(["Pranesh", "crypto"]);
+const printArry = getArrayOne<number>([1, 2, 4]);
+
+console.log(printArry);
+console.log(printString);
+
+//generics in function
+const PintAnything = <T>(something: T): void => {
+  console.log(something);
+};
+
+PintAnything<string>("poko");
+PintAnything<boolean>(true);
+PintAnything<number>(3);
+
+//tuple Here you have to maintain order
+let t: [string, number, boolean] = ["pilo", 3, false];
+
+//enum
+
+enum Week {
+  Sat,
+  Sun,
+  Mon,
+  Tue,
+  Wed,
+  Thu,
+  Fri,
+}
